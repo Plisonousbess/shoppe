@@ -38,18 +38,37 @@ RSpec.describe ProductsController, type: :controller do
     it "does not save an empty product to the database" do
       expect{ post :create, { "product" => {name: "", description: "", price: -1}}}.to change{ Product.count }.by(0)
     end
-
   end
 
-  # describe 'put #update' do
-  #   product = Product.create(name: "banana", description: "trees of banana", price: 100.20 )
-  #   prod = Product.find_by(name: 'banana')
-  #   prod.name = 'apple'
 
-  #   it "responds with a 302" do
-  #   patch :update, prod
-  #     expect(response.status).to eq 302
-  #   end
+  describe 'GET #show' do
+    it "shows a single product" do
+      new_prod = Product.create({name: "sasasa", description: "asasasasa", price: 12.12 })
+        get :show, :id => new_prod.id
+        expect(response.status).to eq(200)
+    end
+  end
+
+  describe 'GET #edit' do
+    it "shows a single product's edit form" do
+      new_prod = Product.create({name: "sasasa", description: "asasasasa", price: 12.12 })
+        get :edit, :id => new_prod.id
+        expect(response.status).to eq(200)
+    end
+  end
+
+
+  describe 'PATCH #edit' do
+    product = Product.create({name: "banana", description: "trees of banana", price: 100.20 })
+    prod = Product.find_by(name: 'banana')
+
+    it "responds with a 302" do
+    patch :update,:id => prod.id, :product => {:name => "apple", :description => "plants", :price => 15}
+      expect(response.status).to eq 302
+    end
+  end
+
+  # describe ''
 
   # end
 
