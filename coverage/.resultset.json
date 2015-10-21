@@ -1,0 +1,82 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/apprentice/Desktop/shoppe/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/shoppe/app/helpers/products_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/shoppe/app/controllers/products_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        4,
+        4,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/shoppe/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/shoppe/app/models/product.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1445465797
+  }
+}

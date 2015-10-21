@@ -14,8 +14,6 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
     else
-       # p "**"*50
-       # p "#{@product.errors}"
        render :new
     end
   end
@@ -36,7 +34,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.'
+    redirect_to products_path, notice: 'Product was successfully destroyed.'
   end
 
 private
