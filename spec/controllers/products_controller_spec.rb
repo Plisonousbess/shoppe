@@ -44,16 +44,16 @@ RSpec.describe ProductsController, type: :controller do
   describe 'GET #show' do
     it "shows a single product" do
       new_prod = Product.create({name: "sasasa", description: "asasasasa", price: 12.12 })
-        get :show, :id => new_prod.id
-        expect(response.status).to eq(200)
+      get :show, :id => new_prod.id
+      expect(response.status).to eq(200)
     end
   end
 
   describe 'GET #edit' do
     it "shows a single product's edit form" do
       new_prod = Product.create({name: "sasasa", description: "asasasasa", price: 12.12 })
-        get :edit, :id => new_prod.id
-        expect(response.status).to eq(200)
+      get :edit, :id => new_prod.id
+      expect(response.status).to eq(200)
     end
   end
 
@@ -63,13 +63,18 @@ RSpec.describe ProductsController, type: :controller do
     prod = Product.find_by(name: 'banana')
 
     it "responds with a 302" do
-    patch :update,:id => prod.id, :product => {:name => "apple", :description => "plants", :price => 15}
+      patch :update,:id => prod.id, :product => {:name => "apple", :description => "plants", :price => 15}
       expect(response.status).to eq 302
     end
   end
 
-  # describe ''
+  describe 'DELETE #destroy' do
+    product = Product.create({name: "banana", description: "trees of banana", price: 100.20 })
+    prod = Product.find_by(name: 'banana')
 
-  # end
-
+    it "should change resulting product count by -1" do
+      expect{ post :destroy, :id => prod.id }.to change{ Product.count }.by(-1)
+   end
+ end
 end
+
