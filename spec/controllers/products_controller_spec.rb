@@ -18,8 +18,15 @@ RSpec.describe ProductsController, type: :controller do
     it "assigns the @products instance variable" do
       expect(assigns(:products)).to be_a(ActiveRecord::Relation)
     end
-
   end
+
+  describe 'GET #new' do
+    it "responds with a 200" do
+      get :new
+      expect(response.status).to eq 200
+    end
+  end
+
   describe 'POST #create' do
     it "saves a new product in the database" do
       expect{ post :create, { "product" => {name: "sasasa", description: "asasasasa", price: 12.12 }}}.to change{ Product.count }.by(1)
@@ -44,6 +51,6 @@ RSpec.describe ProductsController, type: :controller do
   #     expect(response.status).to eq 302
   #   end
 
-  end
+  # end
 
 end
