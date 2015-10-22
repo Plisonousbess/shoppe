@@ -1,20 +1,23 @@
-<div>
-  <% if !user_signed_in? %>
-  <%= form_for(@user) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+<div class="show_form">
+  <div>
+    <% if !user_signed_in? %>
+    <%= form_for(@user) do |f| %>
+
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :encrypted_password %><br>
+      <%= f.text_field :encrypted_password %>
+    </div>
+
+    <% else %>
+      <% redirect_to index_path %>
+
+    <% end%>
+
   </div>
-
-  <div class="field">
-    <%= f.label :encrypted_password %><br>
-    <%= f.text_field :encrypted_password %>
-  </div>
-
-  <% else %>
-    <% redirect_to index_path %>
-
-  <% end%>
-
 </div>

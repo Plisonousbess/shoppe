@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.decimal :price, precision: 5, scale: 2
-      t.string  :url
+      t.string  :url, null: false
 
       t.timestamps null: false
     end

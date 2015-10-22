@@ -1,31 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<div class="form_header">Listing Products</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if current_user && current_user.admin == true %>
+  <div class="products_table">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= number_to_currency(product.price) %></td>
-        <td><%= product.description %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td class="prod_name"><%= product.name %></td>
+          <td class="prod_price"><%= number_to_currency(product.price) %></td>
+          <td class="prod_desc"><%= product.description %></td>
+          <td><%= link_to 'Show', product %></td>
+          <% p current_user %>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="container">
+   <ul class="row">
+      <% @products.each do |product| %>
+        <li class="thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-4"><%=product.name%> $<%=product.price%><img src=<%=product.url%>></li>
+      <% end %>
+   </ul>
+</div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<% if current_user && current_user.admin == true %>
+<button class="main_page"><%= link_to 'New Product', new_product_path %></button>
+<% end %>

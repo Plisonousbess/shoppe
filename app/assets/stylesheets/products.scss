@@ -1,3 +1,87 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show_form {
+  margin: auto;
+  width: 75%;
+  border: 1px solid;
+  position: relative;
+  top: 75px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #CCFFFF;
+  box-shadow: 10px 10px 5px #888888;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+.form_link {
+  position: relative;
+  top:100px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.main_page {
+  font-size: 16px;
+  border-radius: 10px;
+  float: right;
+  position: relative;
+  bottom: 110px;
+  right: 5px;
+}
+
+.form_header {
+  font-size: 32px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.products_table {
+  background-color: #E6FFFF;
+}
+
+.products_table, td {
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #888888;
+  padding: 5px;
+}
+
+td {
+  background-color: #FFEDFF;
+}
+
+.prod_desc {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .prod_desc{
+    display: block;
+  }
+}
+
+table {
+  margin: auto;
+}
+
+.thumbnail {
+  height: 200px;
+  width: 200px;
+  background-size: contain;
+  box-shadow: 3px 3px 3px #888888;
+  }
+
+.row {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+
+}

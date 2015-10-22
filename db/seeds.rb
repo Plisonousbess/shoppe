@@ -9,3 +9,11 @@ require 'faker'
 100.times do
   Product.create({name: Faker::Commerce.product_name, description: Faker::Lorem.sentence(3), price: Faker::Commerce.price, url: Faker::Avatar.image})
 end
+
+User.create({ email: 'admin@gmail.com', encrypted_password: 'password', admin: true  })
+
+# t.string :email,              null: false, default: ""
+#       t.string :encrypted_password, null: false, default: ""
+
+#       ## Admin
+#       t.boolean :admin, default: "false", null: false
