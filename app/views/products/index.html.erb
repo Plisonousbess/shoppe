@@ -3,6 +3,10 @@
 <div class="form_header">Listing Products</div>
 
 <% if current_user && current_user.admin == true %>
+<button class="main_page"><%= link_to 'New Product', new_product_path %></button>
+<% end %>
+
+<% if current_user && current_user.admin == true %>
   <div class="products_table">
     <table>
       <thead>
