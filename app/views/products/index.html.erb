@@ -33,7 +33,7 @@
   <div class="container">
    <ul class="row">
       <% @products.each do |product| %>
-        <li class="thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-4"><%=product.name%> $<%=product.price%><img src=<%=product.url%>></li>
+        <a href="/products/<%=product.id%>"><li style='background-image: url("<%=product.url%>")'class="thumbnail col-lg-2 col-md-2 col-sm-3 col-xs-4"><span><%=product.name%> $<%=product.price%></span></li></a>
       <% end %>
    </ul>
 </div>

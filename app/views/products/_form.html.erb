@@ -26,14 +26,17 @@
         <%= f.text_area :description %>
       </div>
       <div class="field">
-        <%= f.label "Image URL" %><br>
+        <%= f.label :url %> for image<br>
         <%= f.text_field :url %>
-      </div>
+      </div><br>
 
 
       <div class="actions">
         <%= f.submit %>
       </div>
     <% end %>
+    <br>
+<span class="button edit_button"><a><%= link_to 'Show', @product %></a></span>
+<span class="button edit_button"><a><%= link_to 'Back', products_path %></a></span>
   </div>
 </p>

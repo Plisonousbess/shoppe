@@ -1,28 +1,28 @@
 <div class="show_form">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
+  <h3>
+    <span class="caption_title">Name:</span>
+    <span class="caption_value"><%= @product.name %></span>
+  </h3>
 
-  <p>
-    <strong>Price:</strong>
-    <%= number_to_currency(@product.price) %>
-  </p>
+  <h3>
+    <span class="caption_title">Price:</span>
+    <span class="caption_value"><%= number_to_currency(@product.price) %></span>
+  </h3>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+  <h3>
+    <span class="caption_title">Description:</span>
+    <span class="caption_value"><%= @product.description %></span>
+  </h3>
 
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag @product.url %>
-  </p>
+  <h3>
+    <span class="caption_title">Image:</span>
+    <span class="caption_value"><%= image_tag @product.url %></span>
+  </h3>
 
   <% if current_user && current_user.admin == true %>
-  <button class="form_link"><%= link_to 'Edit', edit_product_path(@product) %></button>
+  <span class="button"><%= link_to 'Edit', edit_product_path(@product) %></span>
   <% end %>
-  <button class="form_link"><%= link_to 'Back', products_path %></button>
+  <span class="button"><%= link_to 'Back', products_path %></span>
 </div>

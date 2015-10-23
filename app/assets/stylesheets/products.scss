@@ -78,10 +78,43 @@ table {
   width: 200px;
   background-size: contain;
   box-shadow: 3px 3px 3px #888888;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #CCFFFF;
   }
 
 .row {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
 
+}
+
+.caption_title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+
+}
+
+.caption_value {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.button {
+  height: 30px;
+  width: 70px;
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #888888;
+  background-color: #E6FFFF;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  padding: 6px;
+}
+
+@media only screen and (min-width: 500px) {
+  #product_name, #product_price, #product_description, #product_url {
+    width: 300px;
+  }
 }
