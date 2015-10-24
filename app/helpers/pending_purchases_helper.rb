@@ -1,0 +1,2 @@
+module PendingPurchasesHelper
+end

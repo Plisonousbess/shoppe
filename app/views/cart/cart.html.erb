@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Cart view</title>
+</head>
+<body>
+  <div class="cart_container">
+    <% if @cart %>
+      <% @pending_purchase.each do |item| %>
+          <div class="cart_item">
+            <%= link_to product_path, id: item.id %><br>
+            <%= item.price %><br>
+            <%= item.url %>
+          </div>
+        <% end %>
+    <% else %>
+      <% @cart = Cart.create(user_id: current_user.id) %>You have no items in your shopping cart.
+    <% end %>
+  </div>
+</body>
+</html>
