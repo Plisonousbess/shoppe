@@ -122,8 +122,28 @@ table {
   padding: 6px;
 }
 
+.all_products {
+  position: relative;
+  bottom: 40px;
+  margin: 10px;
+
+}
+
 @media only screen and (min-width: 500px) {
   #product_name, #product_price, #product_description, #product_url {
     width: 300px;
   }
 }
+
+.cart_item {
+  background-color: #E6FFFF;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #888888;
+  padding: 5px;
+  margin: 8px;
+}
+

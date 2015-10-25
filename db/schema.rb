@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151023190759) do
   end
 
   create_table "pending_purchases", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "cart_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

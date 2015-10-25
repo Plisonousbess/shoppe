@@ -3,17 +3,27 @@
   <title>Cart view</title>
 </head>
 <body>
+  <span class="all_products button"><%= link_to 'All Products', products_path %></span>
   <div class="cart_container">
+    <% @cart = Cart.find_by(user_id: current_user.id)
+ %>
+    <% p params %>
+    <% p "Top of block" %>
     <% if @cart %>
-      <% @pending_purchase.each do |item| %>
-          <div class="cart_item">
-            <%= link_to product_path, id: item.id %><br>
-            <%= item.price %><br>
-            <%= item.url %>
-          </div>
-        <% end %>
+    <% PendingPurchase.where(cart_id: @cart.id). each do |item| %>
+        <div class="cart_item">
+          <% pending_purchase = PendingPurchase.find(item.id) %>
+          <% p "%" * 100 %>
+          <% product = Product.find(item.product_id) %>
+          <a href="/products/<%=product.id%>"><%= product.name %></a><br>
+          <%= product.description %><br>
+          $<%= product.price %> <br><br>
+          <%= link_to 'Delete', pending_purchase, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+
+        </div>
+      <% end %>
     <% else %>
-      <% @cart = Cart.create(user_id: current_user.id) %>You have no items in your shopping cart.
+      You have no items in your shopping cart.
     <% end %>
   </div>
 </body>
